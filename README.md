@@ -41,21 +41,10 @@ The SQLite file is created automatically at `data/app.db` on first run.
 
 ## Decisions Write-up (150 words max)
 
-**1. Trending calculation:** `score = likes / (hoursSincePublished + 2)^1.5`
-— a Hacker-News-style gravity formula. Pure like-count would let old viral
-stories dominate forever; this lets fresh stories with modest likes compete
-while still rewarding genuine popularity. `liked` and `recent` are offered
-as alternate sort modes.
+**1. Trending Calculation:** `score = likes / Math.pow(Math.max(hours, 0) + 2, 1.5)` is used. This Hacker-News style gravity formula allows newer stories with modest likes to compete, preventing older viral stories from dominating forever.
 
-**2. Double-like prevention:** the `likes` table has `UNIQUE(storyId, userId)`.
-The toggle endpoint checks for an existing row and deletes it (unlike) or
-inserts it (like); a race-condition double-insert is caught by the DB
-constraint itself, not just app logic — so it's correct even under concurrent
-clicks.
+**2. Double-Like Prevention:** The `likes` table uses a schema-level `UNIQUE(storyId, userId)` constraint. We safely catch this database-level constraint violation during a race condition, correctly preventing duplicate entries.
 
-**3. Drafts never public:** every public query (listing, reader) hardcodes
-`WHERE status = 'published'` in the SQL itself, not as a post-fetch filter.
-The reader endpoint additionally lets only the author view their own draft.
+**3. Draft Privacy:** Enforced strictly at the SQL level via `WHERE s.status = 'published'`. Single story views use `WHERE s.id = ? AND (s.status = 'published' OR s.authorId = ?)`, guaranteeing drafts cannot leak via JavaScript oversight.
 
-**Malformed input handled:** empty/whitespace-only `title` on create/edit →
-`400 { error: "Title cannot be empty" }`, validated before any DB write.
+**4. Malformed Input:** Blank or whitespace-only titles trigger a `400 { error: 'Title cannot be empty' }` explicitly before the application attempts any database write.
