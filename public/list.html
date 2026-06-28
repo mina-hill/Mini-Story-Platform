@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Story Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="navbar glass">
+    <div class="nav-brand">
+      <a href="/">MiniStory</a>
+    </div>
+    <div class="nav-links" id="auth-links">
+      <!-- Injected by JS -->
+    </div>
+  </nav>
+
+  <main class="container">
+    <header class="hero">
+      <h1 class="hero-title">Discover inspiring ideas</h1>
+      <p class="hero-subtitle">Read and share stories on a platform designed for thought.</p>
+    </header>
+
+    <div class="sort-bar">
+      <button class="sort-btn active" data-sort="trending">Trending</button>
+      <button class="sort-btn" data-sort="recent">Recent</button>
+      <button class="sort-btn" data-sort="liked">Most Liked</button>
+    </div>
+
+    <div class="story-grid" id="story-list">
+      <!-- Stories injected here -->
+      <div class="loader">Loading stories...</div>
+    </div>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/listing.js"></script>
+</body>
+</html>

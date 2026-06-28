@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Write Story - Mini Story Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="write-page">
+  <nav class="navbar glass">
+    <div class="nav-brand">
+      <a href="/">MiniStory</a>
+    </div>
+    <div class="nav-links" id="auth-links"></div>
+  </nav>
+
+  <main class="container write-container">
+    <div id="write-error" class="error-msg hidden"></div>
+    <form id="write-form" class="editor-form">
+      <input type="text" id="story-title" class="editor-title" placeholder="Story Title" required>
+      <textarea id="story-content" class="editor-content" placeholder="Tell your story..."></textarea>
+      
+      <div class="editor-actions">
+        <span id="save-status" class="save-status"></span>
+        <div>
+          <button type="button" id="save-draft-btn" class="btn btn-secondary">Save Draft</button>
+          <button type="submit" id="publish-btn" class="btn btn-primary">Publish</button>
+        </div>
+      </div>
+    </form>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/write.js"></script>
+</body>
+</html>

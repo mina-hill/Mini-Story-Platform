@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Read Story - Mini Story Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="reader-page">
+  <nav class="navbar glass">
+    <div class="nav-brand">
+      <a href="/">MiniStory</a>
+    </div>
+    <div class="nav-links" id="auth-links"></div>
+  </nav>
+
+  <main class="container reader-container">
+    <div id="reader-content">
+      <div class="loader">Loading story...</div>
+    </div>
+    
+    <div class="interactions-section glass">
+      <div class="like-container">
+        <button id="like-btn" class="btn-like">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span id="like-count">0</span>
+        </button>
+      </div>
+      
+      <div class="comments-container">
+        <h3>Comments</h3>
+        <div id="comment-form-container" class="hidden">
+          <form id="comment-form">
+            <textarea id="comment-text" required placeholder="Add a comment..."></textarea>
+            <button type="submit" class="btn btn-secondary">Post</button>
+          </form>
+        </div>
+        <div id="login-to-comment" class="hidden">
+          <p><a href="/login.html">Log in</a> to leave a comment.</p>
+        </div>
+        <div id="comments-list" class="comments-list"></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/reader.js"></script>
+</body>
+</html>

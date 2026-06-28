@@ -1,0 +1,16 @@
+{
+  "name": "mini-story-platform",
+  "version": "1.0.0",
+  "description": "Lightweight Medium/Substack clone - write, publish, like, comment.",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
+  }
+}
