@@ -1,13 +1,17 @@
 # Mini Story Platform
 
+A minimalist, high-performance publishing platform for reading, writing, and engaging with stories.
+
+**Live repo:** [Insert GitHub URL here]
+
 A lightweight Medium/Substack clone: write a story, save as draft or publish,
 browse published stories, like and comment.
 
 ## Stack
-Node.js + Express + better-sqlite3 (file DB, zero setup) + JWT auth.
+Node.js + Express + sqlite3 (file DB, zero setup) + JWT auth.
 Frontend: plain HTML/CSS/JS (no build step), served as static files by Express.
 
-## Run it
+## Setup
 
 ```bash
 npm install
@@ -35,7 +39,7 @@ The SQLite file is created automatically at `data/app.db` on first run.
 
 ---
 
-## Decisions write-up (≤150 words)
+## Decisions Write-up (150 words max)
 
 **1. Trending calculation:** `score = likes / (hoursSincePublished + 2)^1.5`
 — a Hacker-News-style gravity formula. Pure like-count would let old viral
