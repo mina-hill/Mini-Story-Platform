@@ -1,5 +1,10 @@
 # Mini Story Platform
 
+> **Quick Start for Reviewers:** To instantly spin up this project with a fully populated database of realistic users, stories, and comments, simply run:
+> ```bash
+> npm install && npm run seed && npm start
+> ```
+
 A minimalist, high-performance publishing platform for reading, writing, and engaging with stories.
 
 
@@ -20,6 +25,20 @@ npm start
 Open http://localhost:3000 — it serves `/list.html` by default.
 
 The SQLite file is created automatically at `data/app.db` on first run.
+
+## Demo Data
+
+If you'd like to test the application with realistic data immediately, you can populate the database by running:
+
+```bash
+npm run seed
+```
+
+This will safely generate several users, published stories, drafts, likes, and comments. You can then log into any of the seeded accounts using the universal demo password `password123`. For example:
+- **Email:** `alice@example.com`
+- **Email:** `bob@example.com`
+- **Email:** `charlie@example.com`
+- **Password:** `password123`
 
 ## Screens
 - `/login.html` — login / register (toggle button switches mode)

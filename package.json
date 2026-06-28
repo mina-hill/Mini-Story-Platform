@@ -4,7 +4,8 @@
   "description": "Lightweight Medium/Substack clone - write, publish, like, comment.",
   "main": "backend/server.js",
   "scripts": {
-    "start": "node backend/server.js"
+    "start": "node backend/server.js",
+    "seed": "node seed.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
