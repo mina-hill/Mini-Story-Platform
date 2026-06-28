@@ -2,7 +2,6 @@
 
 A minimalist, high-performance publishing platform for reading, writing, and engaging with stories.
 
-**Live repo:** [Insert GitHub URL here]
 
 A lightweight Medium/Substack clone: write a story, save as draft or publish,
 browse published stories, like and comment.
